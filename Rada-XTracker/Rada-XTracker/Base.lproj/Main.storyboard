@@ -143,7 +143,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="24.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0N-oG-4Ks">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0N-oG-4Ks">
                                                     <rect key="frame" x="0.0" y="2" width="87" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="87" id="UzK-ij-JvZ"/>
@@ -152,7 +152,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercises" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPm-SE-0Q5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Sets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPm-SE-0Q5">
                                                     <rect key="frame" x="257" y="2" width="87" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="87" id="Fd9-3S-N6e"/>
@@ -161,10 +161,10 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3Q-jY-td2">
-                                                    <rect key="frame" x="513" y="2" width="87" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3Q-jY-td2">
+                                                    <rect key="frame" x="505" y="2" width="95" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="87" id="qDH-K8-LtS"/>
+                                                        <constraint firstAttribute="width" constant="95" id="qDH-K8-LtS"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,14 +226,14 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="" image="Timer-50" id="YMw-T6-qdI"/>
                     <connections>
-                        <outlet property="breaksTextField" destination="k34-RJ-Lvh" id="rYR-vS-8rt"/>
+                        <outlet property="breakTimeTextField" destination="k34-RJ-Lvh" id="alA-1O-Pu1"/>
                         <outlet property="happyButton" destination="WqJ-hV-uyk" id="ppa-EN-y2j"/>
                         <outlet property="normalButton" destination="TJ7-tp-2vH" id="ACO-w7-hMT"/>
-                        <outlet property="repsTextField" destination="TV8-r6-LdB" id="u2g-ms-vNN"/>
+                        <outlet property="numbSetsTextField" destination="TV8-r6-LdB" id="Nyj-KF-9rL"/>
                         <outlet property="sadButton" destination="LdS-6v-RAb" id="ajE-IQ-Qug"/>
+                        <outlet property="setTimeTextField" destination="2bu-g2-nPo" id="wcK-De-ekt"/>
                         <outlet property="startWorkOut" destination="F7F-yN-sZ0" id="wIB-Hp-6HL"/>
                         <outlet property="timeLabel" destination="Bpc-yV-ZcH" id="mKI-6V-OFn"/>
-                        <outlet property="timeTextField" destination="2bu-g2-nPo" id="Pu9-bL-5rv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtr-ey-6Jz" userLabel="First Responder" sceneMemberID="firstResponder"/>

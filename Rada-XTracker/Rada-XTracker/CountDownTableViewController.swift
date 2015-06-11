@@ -20,15 +20,16 @@ class CountDownTableViewController: UITableViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    @IBOutlet weak var timeTextField: UITextField!
-    @IBOutlet weak var repsTextField: UITextField!
-    @IBOutlet weak var breaksTextField: UITextField!
+    @IBOutlet weak var setTimeTextField: UITextField!
+    @IBOutlet weak var numbSetsTextField: UITextField!
+    @IBOutlet weak var breakTimeTextField: UITextField!
     
-    var workouts: Int = 0
-    var breaks: Int = 0
+    var sets: Int = 0
     
+    var needBreak : Bool = true
     var timer = NSTimer()
     var startTime = NSTimeInterval()
+    var breakTime = NSTimeInterval()
     var endTime = NSDate().dateByAddingTimeInterval(0)
     
     var audioPlayer = AVAudioPlayer()
@@ -37,7 +38,6 @@ class CountDownTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        countDownLoop()
         
     }
     override func didReceiveMemoryWarning() {
@@ -48,17 +48,21 @@ class CountDownTableViewController: UITableViewController {
     // MARK: - Workout Actions:
     @IBAction func startWorkout(sender: AnyObject) {
         //check textfields setup:
-        if repsTextField.text.isEmpty || breaksTextField.text.isEmpty || timeTextField.text.isEmpty {
-            println("Select reps and breaks")
-            var alert = UIAlertView(title: "No Reps Setup", message: "Please setup workout Reps, Breaks and Time.", delegate: self, cancelButtonTitle: "OK")
+        if setTimeTextField.text.isEmpty || numbSetsTextField.text.isEmpty || breakTimeTextField.text.isEmpty {
+            println("Select reps and breakTime")
+            var alert = UIAlertView(title: "No Reps Setup", message: "Please setup workout Reps, breakTime and Time.", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }else {
-            workouts = repsTextField.text.toInt()!
-            breaks = breaksTextField.text.toInt()!
-            
-            var doubleTime = NSString(string: timeTextField.text!).doubleValue
+            //setup the number of sets
+            sets = numbSetsTextField.text.toInt()!
+            var doubleTime = NSString(string: setTimeTextField.text!).doubleValue
             startTime = doubleTime
 
+            //setup the breakTime
+            var doubleBreak = NSString(string: breakTimeTextField.text!).doubleValue
+            breakTime = doubleBreak
+            needBreak =  false
+            
             //timer schedule fires
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "countDownTime", userInfo: nil, repeats: true)
             //loop
@@ -66,34 +70,40 @@ class CountDownTableViewController: UITableViewController {
         }
     }
     
-    func countDownLoop () {
-        var iniiTime = 0
-        var endTime = 10
-        
-        for i in (1...10) {
-            initTime++
-            println("RADAMES \(initTime)")
-        }
-    }
-    
-    
     func countDownTime() {
         let remainedTime = endTime.timeIntervalSinceNow
         timeLabel.text = remainedTime.time
         
         if remainedTime <= 0 {
-            workouts--
-            if workouts == -1 {
+            if needBreak == true {
+            sets--
+            }
+            if sets == -1 {
                 timer.invalidate()
                 var alert = UIAlertView(title: "Workout is DONE", message: "The workout is over, you should rest.", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
             
             }else {
-                endTime = NSDate().dateByAddingTimeInterval(startTime)
-                println(workouts)
-                repsTextField.text = workouts.description
+                
+                if needBreak == true {
+                endTime = NSDate().dateByAddingTimeInterval(breakTime)
+                println(sets)
+                numbSetsTextField.text = sets.description
                 updateLabels()
-                //playAudio()
+                timeLabel.backgroundColor = UIColor.redColor()
+                needBreak = false
+                playAudio()
+                }
+                else
+                {
+                needBreak = true
+                timeLabel.backgroundColor = UIColor.darkGrayColor()
+                endTime = NSDate().dateByAddingTimeInterval(startTime)
+                println(sets)
+                numbSetsTextField.text = sets.description
+                updateLabels()
+                playAudio()
+                }
             }
         }
     }
@@ -103,8 +113,9 @@ class CountDownTableViewController: UITableViewController {
 
         
     }
+    
     func playAudio() {
-        var alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("button-09", ofType: "wav")!)
+        var alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("chime", ofType: "wav")!)
         println(alertSound)
         
         // Removed deprecated use of AVAudioSessionDelegate protocol
@@ -116,12 +127,13 @@ class CountDownTableViewController: UITableViewController {
         audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
+    
     func updateLabels() {
-        if repsTextField.text == "1" {
-            repsTextField.backgroundColor = UIColor.orangeColor()
+        if numbSetsTextField.text == "1" {
+            numbSetsTextField.backgroundColor = UIColor.orangeColor()
             
-        }else if repsTextField.text == "0" {
-            repsTextField.backgroundColor = UIColor.redColor()
+        }else if numbSetsTextField.text == "0" {
+            numbSetsTextField.backgroundColor = UIColor.redColor()
         }
         
     }
