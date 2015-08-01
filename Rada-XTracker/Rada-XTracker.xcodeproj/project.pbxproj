@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC008A611B6C4AFE004A795C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC008A601B6C4AFE004A795C /* CoreDataStack.swift */; };
+		BC008A631B6D41D5004A795C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC008A621B6D41D5004A795C /* CoreLocation.framework */; };
 		BC14B7DA1B1A42F5003DB365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14B7D91B1A42F5003DB365 /* AppDelegate.swift */; };
 		BC14B7DF1B1A42F5003DB365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC14B7DD1B1A42F5003DB365 /* Main.storyboard */; };
 		BC14B7E11B1A42F5003DB365 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC14B7E01B1A42F5003DB365 /* Images.xcassets */; };
 		BC14B7E41B1A42F5003DB365 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC14B7E21B1A42F5003DB365 /* LaunchScreen.xib */; };
 		BC14B7F01B1A42F6003DB365 /* Rada_XTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC14B7EF1B1A42F6003DB365 /* Rada_XTrackerTests.swift */; };
 		BC14B7FA1B1A4361003DB365 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC14B7F91B1A4361003DB365 /* CoreData.framework */; };
+		BC50690A1B3C6265006509B5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5069081B3C6265006509B5 /* Fabric.framework */; };
+		BC50690B1B3C6265006509B5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5069091B3C6265006509B5 /* Crashlytics.framework */; };
 		BC57390B1B29499000D4A2B7 /* chime.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC57390A1B29499000D4A2B7 /* chime.wav */; };
+		BC57390E1B2A188400D4A2B7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC57390C1B2A188400D4A2B7 /* Model.xcdatamodeld */; };
+		BC5739101B2A194400D4A2B7 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC57390F1B2A194400D4A2B7 /* Exercise.swift */; };
+		BC5739151B2A264800D4A2B7 /* go.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC5739141B2A264800D4A2B7 /* go.wav */; };
+		BC5739181B2A27C600D4A2B7 /* startChime.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC5739161B2A27C600D4A2B7 /* startChime.wav */; };
+		BC5739191B2A27C600D4A2B7 /* stopRest.wav in Resources */ = {isa = PBXBuildFile; fileRef = BC5739171B2A27C600D4A2B7 /* stopRest.wav */; };
 		BC6AE6CF1B1D42A9001E21D9 /* CountDownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AE6CE1B1D42A9001E21D9 /* CountDownTableViewController.swift */; };
 		BC6AE6D31B1D61AE001E21D9 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AE6D21B1D61AE001E21D9 /* SetupViewController.swift */; };
+		BC9919F61B2B597C007F7D5A /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9919F51B2B597C007F7D5A /* WorkoutController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC008A601B6C4AFE004A795C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		BC008A621B6D41D5004A795C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BC14B7D41B1A42F5003DB365 /* Rada-XTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rada-XTracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC14B7D81B1A42F5003DB365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC14B7D91B1A42F5003DB365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,9 +51,17 @@
 		BC14B7EE1B1A42F6003DB365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC14B7EF1B1A42F6003DB365 /* Rada_XTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rada_XTrackerTests.swift; sourceTree = "<group>"; };
 		BC14B7F91B1A4361003DB365 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BC5069081B3C6265006509B5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		BC5069091B3C6265006509B5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BC57390A1B29499000D4A2B7 /* chime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chime.wav; sourceTree = "<group>"; };
+		BC57390D1B2A188400D4A2B7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BC57390F1B2A194400D4A2B7 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		BC5739141B2A264800D4A2B7 /* go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = go.wav; sourceTree = "<group>"; };
+		BC5739161B2A27C600D4A2B7 /* startChime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = startChime.wav; sourceTree = "<group>"; };
+		BC5739171B2A27C600D4A2B7 /* stopRest.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stopRest.wav; sourceTree = "<group>"; };
 		BC6AE6CE1B1D42A9001E21D9 /* CountDownTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTableViewController.swift; sourceTree = "<group>"; };
 		BC6AE6D21B1D61AE001E21D9 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		BC9919F51B2B597C007F7D5A /* WorkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +69,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC008A631B6D41D5004A795C /* CoreLocation.framework in Frameworks */,
 				BC14B7FA1B1A4361003DB365 /* CoreData.framework in Frameworks */,
+				BC50690B1B3C6265006509B5 /* Crashlytics.framework in Frameworks */,
+				BC50690A1B3C6265006509B5 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +111,8 @@
 				BC14B7D91B1A42F5003DB365 /* AppDelegate.swift */,
 				BC6AE6D21B1D61AE001E21D9 /* SetupViewController.swift */,
 				BC6AE6CE1B1D42A9001E21D9 /* CountDownTableViewController.swift */,
+				BC9919F71B2B5983007F7D5A /* CONTROLLER */,
+				BC5739111B2A195600D4A2B7 /* MODEL */,
 				BC14B7D71B1A42F5003DB365 /* Supporting Files */,
 			);
 			path = "Rada-XTracker";
@@ -97,8 +122,14 @@
 			isa = PBXGroup;
 			children = (
 				BC14B7F91B1A4361003DB365 /* CoreData.framework */,
+				BC5069081B3C6265006509B5 /* Fabric.framework */,
+				BC5069091B3C6265006509B5 /* Crashlytics.framework */,
+				BC008A621B6D41D5004A795C /* CoreLocation.framework */,
 				BC14B7D81B1A42F5003DB365 /* Info.plist */,
 				BC14B7E21B1A42F5003DB365 /* LaunchScreen.xib */,
+				BC5739141B2A264800D4A2B7 /* go.wav */,
+				BC5739161B2A27C600D4A2B7 /* startChime.wav */,
+				BC5739171B2A27C600D4A2B7 /* stopRest.wav */,
 				BC57390A1B29499000D4A2B7 /* chime.wav */,
 				BC14B7E01B1A42F5003DB365 /* Images.xcassets */,
 			);
@@ -122,6 +153,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BC5739111B2A195600D4A2B7 /* MODEL */ = {
+			isa = PBXGroup;
+			children = (
+				BC57390C1B2A188400D4A2B7 /* Model.xcdatamodeld */,
+				BC57390F1B2A194400D4A2B7 /* Exercise.swift */,
+			);
+			name = MODEL;
+			sourceTree = "<group>";
+		};
+		BC9919F71B2B5983007F7D5A /* CONTROLLER */ = {
+			isa = PBXGroup;
+			children = (
+				BC9919F51B2B597C007F7D5A /* WorkoutController.swift */,
+				BC008A601B6C4AFE004A795C /* CoreDataStack.swift */,
+			);
+			name = CONTROLLER;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +181,7 @@
 				BC14B7D01B1A42F5003DB365 /* Sources */,
 				BC14B7D11B1A42F5003DB365 /* Frameworks */,
 				BC14B7D21B1A42F5003DB365 /* Resources */,
+				BC5069071B3C6243006509B5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -172,6 +222,7 @@
 				TargetAttributes = {
 					BC14B7D31B1A42F5003DB365 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = WF9EJFRLZP;
 					};
 					BC14B7E81B1A42F6003DB365 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -203,8 +254,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC5739151B2A264800D4A2B7 /* go.wav in Resources */,
 				BC14B7DF1B1A42F5003DB365 /* Main.storyboard in Resources */,
+				BC5739181B2A27C600D4A2B7 /* startChime.wav in Resources */,
 				BC14B7E41B1A42F5003DB365 /* LaunchScreen.xib in Resources */,
+				BC5739191B2A27C600D4A2B7 /* stopRest.wav in Resources */,
 				BC14B7E11B1A42F5003DB365 /* Images.xcassets in Resources */,
 				BC57390B1B29499000D4A2B7 /* chime.wav in Resources */,
 			);
@@ -219,14 +273,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BC5069071B3C6243006509B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run c1c85030bc134cd7aa14b0958171ffdf3cc7d531 e4703cc0e30decec68c04f68262fcc4d4efe4d8e0dc9c7955bd71520aa2e00bb";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC14B7D01B1A42F5003DB365 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC5739101B2A194400D4A2B7 /* Exercise.swift in Sources */,
 				BC6AE6D31B1D61AE001E21D9 /* SetupViewController.swift in Sources */,
 				BC6AE6CF1B1D42A9001E21D9 /* CountDownTableViewController.swift in Sources */,
 				BC14B7DA1B1A42F5003DB365 /* AppDelegate.swift in Sources */,
+				BC9919F61B2B597C007F7D5A /* WorkoutController.swift in Sources */,
+				BC57390E1B2A188400D4A2B7 /* Model.xcdatamodeld in Sources */,
+				BC008A611B6C4AFE004A795C /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +429,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rada-XTracker",
+				);
 				INFOPLIST_FILE = "Rada-XTracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -365,9 +445,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rada-XTracker",
+				);
 				INFOPLIST_FILE = "Rada-XTracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -436,6 +522,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BC57390C1B2A188400D4A2B7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC57390D1B2A188400D4A2B7 /* Model.xcdatamodel */,
+			);
+			currentVersion = BC57390D1B2A188400D4A2B7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BC14B7CC1B1A42F5003DB365 /* Project object */;
 }
