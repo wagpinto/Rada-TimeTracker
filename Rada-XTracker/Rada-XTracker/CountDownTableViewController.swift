@@ -24,6 +24,8 @@ class CountDownTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var numbSetsTextField: UITextField!
     @IBOutlet weak var breakTimeTextField: UITextField!
     
+    @IBOutlet weak var locationLabel: UILabel!
+    
     var sets: Int = 0
     
     var needBreak : Bool = true
@@ -34,13 +36,19 @@ class CountDownTableViewController: UITableViewController, UITextFieldDelegate {
     
     var audioPlayer = AVAudioPlayer()
 
-    //MARK: - METHODS
+    //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.numbSetsTextField.delegate = self
         self.setTimeTextField.delegate = self
         self.breakTimeTextField.delegate = self
+        
+        WorkoutController.sharedInstance.getLocation()
+        
+        self.locationLabel.text = WorkoutController.sharedInstance.localCity
+        
+        
         
     }
     override func didReceiveMemoryWarning() {
@@ -91,6 +99,8 @@ class CountDownTableViewController: UITableViewController, UITextFieldDelegate {
                 timer.invalidate()
                 let alert = UIAlertView(title: "Workout is DONE", message: "The workout is over, you should rest.", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
+                let today = NSDate()
+                WorkoutController.sharedInstance.createNewExercise("Monday", date:today, status: "Active", feeling: "Good", type: "Workout")
             
             }else {
                 

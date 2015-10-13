@@ -26,6 +26,7 @@
 		BC6AE6CF1B1D42A9001E21D9 /* CountDownTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AE6CE1B1D42A9001E21D9 /* CountDownTableViewController.swift */; };
 		BC6AE6D31B1D61AE001E21D9 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6AE6D21B1D61AE001E21D9 /* SetupViewController.swift */; };
 		BC9919F61B2B597C007F7D5A /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9919F51B2B597C007F7D5A /* WorkoutController.swift */; };
+		BCCE90981B79B82D00DFAAE2 /* SavedWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCE90971B79B82D00DFAAE2 /* SavedWorkoutTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		BC6AE6CE1B1D42A9001E21D9 /* CountDownTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTableViewController.swift; sourceTree = "<group>"; };
 		BC6AE6D21B1D61AE001E21D9 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		BC9919F51B2B597C007F7D5A /* WorkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
+		BCCE90971B79B82D00DFAAE2 /* SavedWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedWorkoutTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				BC14B7DD1B1A42F5003DB365 /* Main.storyboard */,
 				BC14B7D91B1A42F5003DB365 /* AppDelegate.swift */,
 				BC6AE6D21B1D61AE001E21D9 /* SetupViewController.swift */,
+				BCCE90971B79B82D00DFAAE2 /* SavedWorkoutTableViewController.swift */,
 				BC6AE6CE1B1D42A9001E21D9 /* CountDownTableViewController.swift */,
 				BC9919F71B2B5983007F7D5A /* CONTROLLER */,
 				BC5739111B2A195600D4A2B7 /* MODEL */,
@@ -299,6 +302,7 @@
 				BC6AE6CF1B1D42A9001E21D9 /* CountDownTableViewController.swift in Sources */,
 				BC14B7DA1B1A42F5003DB365 /* AppDelegate.swift in Sources */,
 				BC9919F61B2B597C007F7D5A /* WorkoutController.swift in Sources */,
+				BCCE90981B79B82D00DFAAE2 /* SavedWorkoutTableViewController.swift in Sources */,
 				BC57390E1B2A188400D4A2B7 /* Model.xcdatamodeld in Sources */,
 				BC008A611B6C4AFE004A795C /* CoreDataStack.swift in Sources */,
 			);

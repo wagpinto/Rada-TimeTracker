@@ -13,7 +13,7 @@ import CoreLocation
 class WorkoutController: NSObject, CLLocationManagerDelegate {
 
     //CoreData Stack Properties
-    let coreDataStack = UIApplication.sharedApplication().delegate as! CoreDataStack
+    let coreDataStack = CoreDataStack.sharedInstance
     let fetchRequest = NSFetchRequest(entityName: "Exercise")
     
     //CoreLocation Stack Properties
@@ -29,13 +29,12 @@ class WorkoutController: NSObject, CLLocationManagerDelegate {
     class var sharedInstance :WorkoutController {
         struct Singleton {
             static let instance = WorkoutController()
-            import
         }
         return Singleton.instance
     }
     
     //MARK: - Location Controller Actions:
-    func getLocation () {
+    func getLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -43,19 +42,19 @@ class WorkoutController: NSObject, CLLocationManagerDelegate {
         
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: {(placemarks, error)->Void in
             
             if (error != nil) {
-                println("Reverse geocoder failed with error" + error.localizedDescription)
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
                 return
             }
             
-            if placemarks.count > 0 {
+            if placemarks!.count > 0 {
                 let pm = placemarks[0] as! CLPlacemark
                 self.displayLocationInfo(pm)
             } else {
-                println("Problem with the data received from geocoder")
+                print("Problem with the data received from geocoder")
             }
         })
     }
@@ -78,8 +77,8 @@ class WorkoutController: NSObject, CLLocationManagerDelegate {
         
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("Error while updating location " + error.localizedDescription)
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error while updating location " + error.localizedDescription)
     }
     
     
@@ -87,17 +86,20 @@ class WorkoutController: NSObject, CLLocationManagerDelegate {
     //Create
     func createNewExercise (name: NSString, date: NSDate, status: NSString, feeling: NSString, type: NSString) ->Exercise {
         
-        var exercises: Exercise = NSEntityDescription.insertNewObjectForEntityForName("Exercises", inManagedObjectContext: CoreDataStack().managedObjectContext!) as! Exercise
+        let exercises = NSEntityDescription.entityForName("Exercise", inManagedObjectContext: CoreDataStack.sharedInstance.managedObjectContext!)
+        let ex = Exercise(entity: exercises!, insertIntoManagedObjectContext: CoreDataStack.sharedInstance.managedObjectContext)
+
+        //        var exercises: Exercise = NSEntityDescription.insertNewObjectForEntityForName("Exercise", inManagedObjectContext: CoreDataStack().managedObjectContext!) as! Exercise
         
-        exercises.exName = name as String
-        exercises.exDate = date
-        exercises.exStatus = status as String
-        exercises.exFeeling = feeling as String
-        exercises.exType = type as String
+        ex.exName = name as String
+        ex.exDate = date
+        ex.exStatus = status as String
+        ex.exFeeling = feeling as String
+        ex.exType = type as String
         
         coreDataStack.save()
         
-        return exercises
+        return ex
     }
 
     //Fetch

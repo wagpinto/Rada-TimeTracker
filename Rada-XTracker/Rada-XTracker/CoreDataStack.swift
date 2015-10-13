@@ -10,6 +10,13 @@ import UIKit
 import CoreData
 
 class CoreDataStack: NSObject {
+    
+    class var sharedInstance: CoreDataStack {
+        struct Singleton {
+            static let value = CoreDataStack()
+        }
+        return Singleton.value
+    }
    
     lazy var applicationDocumentsDirectory: NSURL = {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
